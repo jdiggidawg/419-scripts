@@ -4,7 +4,6 @@ import datetime
 
 #takes audio file name as input, as well as desired segment length. 
 #outputs audio files of desired segment length split from the main audio file.
-SEG_LENGTH = 8
 
 def extract_podcast_num(s):
 	ret = s.partition('#')[2]
@@ -25,7 +24,7 @@ print(podcast_num)
 
 audioSeg = AudioSegment.from_mp3(aud)
 
-for i in range(0, len(audioSeg), msec(SEG_LENGTH)):
+for i in range(0, len(audioSeg), msec(segment_length)):
 	
 	t1 = i
 	t2 = i + segment_length 
